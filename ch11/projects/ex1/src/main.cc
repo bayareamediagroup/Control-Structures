@@ -3,9 +3,16 @@
 
 using namespace std;
 
+void information(movie_t film)
+{
+  cout << "Title: " << film.title << "\nDirector: " << film.director << "\nYear Released: " << film.released << endl;
+}
+
 int main(void)
 {
-  movie_t movie;
+  movie_t movie = {"Training Day", "Michael Jones", 2001, 89};
+
+  information(movie);
 
   return 0;
 }

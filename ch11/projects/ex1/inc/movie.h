@@ -3,8 +3,8 @@
 
 typedef struct Movie_t
 {
-    char *title;
-    char *director;
+    char title[20];
+    char director[20];
     int released;
     int running_time;
 } movie_t;
