@@ -1,5 +1,5 @@
-#ifndef _EX1_
-#define _EX1_
+#ifndef _MOVIE_
+#define _MOVIE_
 
 typedef struct Movie_t
 {
@@ -10,5 +10,6 @@ typedef struct Movie_t
 } movie_t;
 
 void information();
+void showRelease(const movie_t *);
 
 #endif
