@@ -5,47 +5,42 @@
 
 using namespace std;
 
-int calculateTotal(const east_t *t)
+int calculateTotal(const division_t *c)
 {
-    int s = t->firstQuarter + t->secondQuarter + t->thirdQuarter + t->fourthQuarter;
-    return s;
+    int total = c->firstQuarter + c->secondQuarter + c->thirdQuarter + c->fourthQuarter;
+    return total;
 }
 
-void salesFigures(east_t *east)
+void salesFigures(division_t *s)
 {
     cout << "First Quarter: ";
-    cin >> east->firstQuarter;
+    cin >> s->firstQuarter;
 
     cout << "Second Quarter: ";
-    cin >> east->secondQuarter;
+    cin >> s->secondQuarter;
 
     cout << "Third Quarter: ";
-    cin >> east->thirdQuarter;
+    cin >> s->thirdQuarter;
 
     cout << "Fourth Quarter: ";
-    cin >> east->fourthQuarter;
+    cin >> s->fourthQuarter;
 }
 
 int main()
 {
-    int sum = 0;
-    east_t east;
-    east_t west;
-    /*
-    east_t south;
-    east_t north;
-    */
+    static int i = 0, sum = 0;
+    division_t location[SIZE];
 
-    cout << "What are the sales figures for each division?" << endl;
-    salesFigures(&east);
-    sum = calculateTotal(&east);
-    cout << "Sum: " << sum << endl;
+    const char *division[SIZE] = {"East", "West", "South", "North"};
 
-    cout << "What are the sales figures for each division west?" << endl;
-
-    salesFigures(&west);
-    sum = calculateTotal(&west);
-    cout << "Sum: " << sum << endl;
+    do
+    {
+        cout << "What are the sales figures for the " << division[i] << " division." << endl;
+        salesFigures(&location[i]);
+        sum = calculateTotal(&location[i]);
+        cout << "Sum: " << sum << endl;
+        i++;
+    } while (i < SIZE);
 }
 
 /*
