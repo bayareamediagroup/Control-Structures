@@ -3,10 +3,11 @@
 
 #define SIZE 20
 
-typedef struct Movie_t
+typedef struct
 {
     char director[SIZE];
     char title[SIZE];
+    int budget;
     int length;
     int year;
 } movie_t;

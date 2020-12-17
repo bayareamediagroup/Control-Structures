@@ -6,12 +6,20 @@ using namespace std;
 
 void display(movie_t *movie)
 {
+    cout << "Title: " << movie->title << endl;
     cout << "Director: " << movie->director << endl;
+    cout << "Director: " << movie->length << endl;
+    cout << "Director: " << movie->year << endl;
+    /*
+    cout << "Budget: " << movie->budget << endl;
+    cout << "Run Time: " << movie->length << endl;
+    cout << "Year Released: " << movie->year << endl;
+    */
 }
 
 int main(void)
 {
-    movie_t movie = {"Collateral", "Tom Cruise", 2001, 130};
+    movie_t movie = {"Tom Cruise", "Colateral", 145, 2001};
 
     cout << "configured!" << endl;
 
