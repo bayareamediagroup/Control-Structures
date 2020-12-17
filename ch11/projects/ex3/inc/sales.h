@@ -9,7 +9,7 @@ typedef struct East_t
     int fourthQuarter;
 } east_t;
 
-int calculateAverage();
+int calculateAverage(const east_t *);
 int calculateTotal(const east_t *);
 void salesFigures(east_t *);
 void displaySales();

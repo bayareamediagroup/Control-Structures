@@ -7,8 +7,8 @@ using namespace std;
 
 int calculateTotal(const east_t *t)
 {
-    int sum = t->firstQuarter + t->secondQuarter + t->thirdQuarter + t->fourthQuarter;
-    return sum;
+    int s = t->firstQuarter + t->secondQuarter + t->thirdQuarter + t->fourthQuarter;
+    return s;
 }
 
 void salesFigures(east_t *east)
@@ -28,11 +28,23 @@ void salesFigures(east_t *east)
 
 int main()
 {
+    int sum = 0;
     east_t east;
+    east_t west;
+    /*
+    east_t south;
+    east_t north;
+    */
 
     cout << "What are the sales figures for each division?" << endl;
     salesFigures(&east);
-    int sum = calculateTotal(&east);
+    sum = calculateTotal(&east);
+    cout << "Sum: " << sum << endl;
+
+    cout << "What are the sales figures for each division west?" << endl;
+
+    salesFigures(&west);
+    sum = calculateTotal(&west);
     cout << "Sum: " << sum << endl;
 }
 
