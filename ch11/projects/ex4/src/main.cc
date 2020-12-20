@@ -4,15 +4,27 @@
 
 #include "weather.h"
 
-#define SIZE 12
+#define SIZE 3
 
 using namespace std;
 
 int total = 0;
+int rainFall = 0;
+
+static void calculate(int rf, int total)
+{
+  cout << "Total Rainfall: " << rf << endl;
+  cout << "Total temperature for the year: " << total << endl;
+}
 
 static void statistics(weather_t *m, const char *mon[], const int i)
 {
-  cout << "Enter data for the month of " << mon[i] << "\n";
+  cout << "\n" << "Enter data for the month of " << mon[i] << "\n";
+
+  cout << endl;
+
+  cout << "Rain: ";
+  cin >> m->rain;
 
   cout << "High Temperature: ";
   cin >> m->high;
@@ -20,13 +32,11 @@ static void statistics(weather_t *m, const char *mon[], const int i)
   cout << "Low Temperature: ";
   cin >> m->low;
 
+  cout << endl;
+
+  cout << "Rain: " << m->rain << endl;
   cout << "Hi Temperature " << m->high << endl;
   cout << "Lo Temperature " << m->low << endl;
-
-  total += (m->high + m->low);
-
-  cout << "Total: " << total << endl;
-
 }
 
 int main(void)
@@ -35,7 +45,7 @@ int main(void)
 
   weather_t weather[SIZE] = {0, 0, 0, 0};
 
-  const char *month[SIZE] = {
+  const char *month[12] = {
     "January",
     "February",
     "March",
@@ -52,8 +62,12 @@ int main(void)
 
   do {
     statistics(&weather[cnt], month, cnt);
+    rainFall += weather[cnt].rain;
+    total += (weather[cnt].high + weather[cnt].low);
     cnt++;
   } while(cnt < SIZE);
+
+  calculate(rainFall, total);
 
   return 0;
 }
