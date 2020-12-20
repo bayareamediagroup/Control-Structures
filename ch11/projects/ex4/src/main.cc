@@ -1,38 +1,54 @@
-#include <iostream>
 #include <cstdio>
 #include <cstring>
+#include <iostream>
 
 #include "weather.h"
 
-#define SIZE 3
+#define SIZE 12
 
 using namespace std;
 
-void statistics(weather_t *m, const char *mon[], const int i)
+int total = 0;
+
+static void statistics(weather_t *m, const char *mon[], const int i)
 {
   cout << "Enter data for the month of " << mon[i] << "\n";
+
+  cout << "High Temperature: ";
   cin >> m->high;
+
+  cout << "Low Temperature: ";
+  cin >> m->low;
+
+  cout << "Hi Temperature " << m->high << endl;
+  cout << "Lo Temperature " << m->low << endl;
+
+  total += (m->high + m->low);
+
+  cout << "Total: " << total << endl;
+
 }
 
 int main(void)
 {
   int cnt = 0;
 
-  const char *month[12] = {
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"};
+  weather_t weather[SIZE] = {0, 0, 0, 0};
 
-  weather_t weather[SIZE];
+  const char *month[SIZE] = {
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  };
 
   do {
     statistics(&weather[cnt], month, cnt);
