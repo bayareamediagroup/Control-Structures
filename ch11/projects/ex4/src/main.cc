@@ -4,16 +4,21 @@
 
 #include "weather.h"
 
-#define SIZE 12
+#define SIZE 3
 
 using namespace std;
+
+void statistics(weather_t *m, const char *mon[], const int i)
+{
+  cout << "Enter data for the month of " << mon[i] << "\n";
+  cin >> m->high;
+}
 
 int main(void)
 {
   int cnt = 0;
-  int data = 0;
 
-  const char *month[] = {
+  const char *month[12] = {
         "January",
         "February",
         "March",
@@ -24,21 +29,15 @@ int main(void)
         "August",
         "September",
         "October",
-        "September",
-        "October",
         "November",
-        "December"
-  };
+        "December"};
 
   weather_t weather[SIZE];
 
   do {
-    cout << "Enter Data for Month: " <<  month[0] << "\n";
-
-    cin >> data;
-
-    cout << "This is the data: " << data << "\n";
-  } while(cnt < 12);
+    statistics(&weather[cnt], month, cnt);
+    cnt++;
+  } while(cnt < SIZE);
 
   return 0;
 }
