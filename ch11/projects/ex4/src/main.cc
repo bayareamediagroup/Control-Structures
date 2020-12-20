@@ -10,7 +10,36 @@ using namespace std;
 
 int main(void)
 {
+  int cnt = 0;
+  int data = 0;
+
+  const char *month[] = {
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "September",
+        "October",
+        "November",
+        "December"
+  };
+
   weather_t weather[SIZE];
+
+  do {
+    cout << "Enter Data for Month: " <<  month[0] << "\n";
+
+    cin >> data;
+
+    cout << "This is the data: " << data << "\n";
+  } while(cnt < 12);
+
   return 0;
 }
 
