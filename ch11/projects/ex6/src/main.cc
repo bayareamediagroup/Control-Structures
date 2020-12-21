@@ -11,11 +11,10 @@ using namespace std;
 
 /*
  * Todo
- * 1. calculate and display the toal points earned by the team.
- * 2. the number and name of the play who has earned the most points should also be displayed.
+ * 1. The number and name of the play who has earned the most points should also be displayed.
  * * */
 
-static void display(soccer_t *l, int total)
+static void display(const soccer_t *l, int total)
 {
   int i;
   for(i = 0; i < SIZE; i++)
