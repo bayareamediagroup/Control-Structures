@@ -9,13 +9,20 @@
 
 using namespace std;
 
-static void display(soccer_t *l)
+/*
+ * Todo
+ * 1. calculate and display the toal points earned by the team.
+ * 2. the number and name of the play who has earned the most points should also be displayed.
+ * * */
+
+static void display(soccer_t *l, int total)
 {
   int i;
   for(i = 0; i < SIZE; i++)
   {
     cout << l[i].name << setw(10) << l[i].number << setw(10) << l[i].points << endl;
   }
+  cout << "Total Points: " << setw(10) << total << endl;
 }
 
 static void collect_scores(soccer_t *s, int i)
@@ -38,14 +45,16 @@ static void collect_scores(soccer_t *s, int i)
 int main(void)
 {
   int cnt = 0;
+  int total_points = 0;
   soccer_t soccer[SIZE];
 
   do {
     collect_scores(&soccer[cnt], cnt);
+    total_points += soccer[cnt].points;
     cnt++;
   } while(cnt < SIZE);
 
-  display(soccer);
+  display(soccer, total_points);
 
   return 0;
 }
