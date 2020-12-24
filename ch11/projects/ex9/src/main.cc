@@ -10,13 +10,13 @@ using namespace std;
 
 static void display(const speaker_t *d, int size)
 {
-    int i;
-    cout << "Registrants" << endl;
+  int i;
+  cout << "Registrants" << endl;
 
-    for(i = 0; i < size; ++i)
-    {
-        cout << i << ". " << d[i].name << " " << d[i].phone << " " << d[i].topic << " " << d[i].fee << "\n------------" << endl;
-    }
+  for(i = 1; i <= size; ++i)
+  {
+    cout << i << ". " << d[i].name << " " << d[i].phone << " " << d[i].topic << " " << d[i].fee << "\n------------" << endl;
+  }
 }
 
 static void enter_data(speaker_t *s)
