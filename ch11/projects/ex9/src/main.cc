@@ -1,15 +1,30 @@
-#include <iostream>
-#include <iomanip>
 #include <cstring>
+#include <iomanip>
+#include <iostream>
 
 #include "speaker.h"
 
-#define SIZE 10
+#define SIZE  3
 
 using namespace std;
 
-void enter_data(speaker_t *s)
+static void display(const speaker_t *d, int size)
 {
+    int i;
+    cout << "Registrants" << endl;
+
+    for(i = 0; i < size; ++i)
+    {
+        cout << i << ". " << d[i].name << " " << d[i].phone << " " << d[i].topic << " " << d[i].fee << "\n------------" << endl;
+    }
+}
+
+static void enter_data(speaker_t *s)
+{
+  static int count = 1;
+
+  cout << "Registrant " << count << ". ";
+
   cout << "Name: ";
   cin.ignore();
   getline(cin, s->name);
@@ -22,6 +37,10 @@ void enter_data(speaker_t *s)
 
   cout << "Registration Fee: ";
   cin >> s->fee;
+
+  cout << "************" << endl;
+
+  count += 1;
 }
 
 int main(void)
@@ -29,14 +48,12 @@ int main(void)
   int i = 0;
   speaker_t speaker[SIZE];
 
-  cout << "Enter Data: ";
-
   while(i < SIZE) {
     enter_data(&speaker[i]);
     i += 1;
   }
 
-  display(speaker);
+  display(speaker, i);
 
   return 0;
 }

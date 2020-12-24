@@ -23,7 +23,7 @@ static void enter(customer_t *e)
 
 static void update(customer_t *customer, int *size)
 {
-  int j, k, item = 0;
+  unsigned short j, k, item = 0;
 
   for(j = 0; j < *size; j++ )
   {
