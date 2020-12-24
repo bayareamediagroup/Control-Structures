@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cstring>
+#include <cctype>
 
 #include "customer.h"
 
@@ -25,10 +26,11 @@ static void update()
   cout << "Update..." << endl;
 }
 
-static void display(const customer_t *item, int count)
+static void display(const customer_t *item, int *count)
 {
   int i;
-  for(i = 0; i <= count; i++)
+  //count--;
+  for(i = 0; i < *count; i++)
   {
     cout << "===>" << item[i].name << setw(10) << item[i].address << setw(10) << item[i].street << endl;
   }
@@ -36,13 +38,14 @@ static void display(const customer_t *item, int count)
 
 int main(void)
 {
+  int i = 0, choice = 0;
+  int *ptr = 0;
+
+  ptr = &i;
+
   customer_t customer[SIZE];
 
-  int i = 0;
-  int choice = 0;
-
   do {
-
     cout << "Customer Service Menu"<< endl;
     cout << "1. Enter Information" << endl;
     cout << "2. Update Information" << endl;
@@ -51,19 +54,23 @@ int main(void)
     cout << "Menu Option: ";
 
     cin >> choice;
-
-    switch(choice) {
-      case 1: enter(&customer[i]);
-              break;
-      case 2: update();
-              break;
-      case 3: display(customer, i);
-              break;
-      default:
-              cout << "That's not an option" << endl;
+    /*
+    if(!isdigit(choice)) {
+      cout << "That's not an integer!" << endl;
+      return 1;
     }
-    i++;
-  } while(i < 10);
+    */
+
+    if(choice == 1) {
+      enter(&customer[i]);
+      i++;
+    } else if(choice == 2) {
+      update();
+      i++;
+    } else if(choice == 3)  {
+      display(customer, ptr);
+    }
+  } while(i < SIZE);
 
   return 0;
 }
