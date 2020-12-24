@@ -21,15 +21,31 @@ static void enter(customer_t *e)
   cin >> e->street;
 }
 
-static void update()
+static void update(customer_t *customer, int *size)
 {
-  cout << "Update..." << endl;
+  int j, k, item = 0;
+
+  for(j = 0; j < *size; j++ )
+  {
+    cout << "===>" << customer[j].name << setw(10) << customer[j].address << setw(10) << customer[j].street << endl;
+  }
+
+  cout << "Which Customer would you like to update ";
+  cin >> item;
+
+  for(k = 0; k < *size; k++)
+  {
+    if(item == k)
+    {
+        cout << "This one customer will be updated: " << customer[k].name << endl;
+        enter(&customer[k]);
+    }
+  }
 }
 
 static void display(const customer_t *item, int *count)
 {
   int i;
-  //count--;
   for(i = 0; i < *count; i++)
   {
     cout << "===>" << item[i].name << setw(10) << item[i].address << setw(10) << item[i].street << endl;
@@ -54,17 +70,11 @@ int main(void)
 
     cin >> choice;
 
-    if(!isdigit(choice)) {
-      cout << "That's not an integer!" << endl;
-      return 1;
-    }
-
     if(choice == 1) {
       enter(&customer[i]);
       i++;
     } else if(choice == 2) {
-      update();
-      i++;
+      update(customer, ptr);
     } else if(choice == 3)  {
       display(customer, ptr);
     }
