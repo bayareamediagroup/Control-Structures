@@ -38,8 +38,7 @@ static void display(const customer_t *item, int *count)
 
 int main(void)
 {
-  int i = 0, choice = 0;
-  int *ptr = 0;
+  int i = 0, choice = 0, *ptr = 0;
 
   ptr = &i;
 
@@ -54,12 +53,11 @@ int main(void)
     cout << "Menu Option: ";
 
     cin >> choice;
-    /*
+
     if(!isdigit(choice)) {
       cout << "That's not an integer!" << endl;
       return 1;
     }
-    */
 
     if(choice == 1) {
       enter(&customer[i]);
