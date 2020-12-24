@@ -33,32 +33,6 @@ static void display(const customer_t *item, int count)
     cout << "===>" << item[i].name << setw(10) << item[i].address << setw(10) << item[i].street << endl;
   }
 }
-/*
-static void menu(customer_t *c)
-{
-  int choice = 0;
-
-  cout << "Customer Service Menu"<< endl;
-  cout << "1. Enter Information" << endl;
-  cout << "2. Update Information" << endl;
-  cout << "3. Display Information" << endl;
-
-  cout << "Menu Option: ";
-
-  cin >> choice;
-
-  switch(choice) {
-    case 1: enter(c);
-            break;
-    case 2: update();
-            break;
-    case 3: display(c);
-            break;
-    default:
-            cout << "That's not an option" << endl;
-  }
-}
-*/
 
 int main(void)
 {
