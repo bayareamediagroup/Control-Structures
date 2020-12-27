@@ -4,12 +4,11 @@
 
 using namespace std;
 
-Employee::Employee(string name, int id, string dept)
+Employee::Employee(string n, int i, string d)
 {
-  name = name;
-  id = id;
-  department = dept;
-  cout << "Employee Constructor Called" << endl;
+  name = n;
+  id = i;
+  department = d;
 }
 
 int Employee::setId(int id)

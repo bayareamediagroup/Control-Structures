@@ -10,5 +10,7 @@ int main(void)
 
   cout << "Welcome to the employee portal" << endl;
 
+  cout << "Your Name: " << employee.getName() << endl;
+
   return 0;
 }

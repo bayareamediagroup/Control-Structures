@@ -15,7 +15,7 @@ class Employee
 
   public:
     /* constructor */
-    Employee(string, int, string);
+    Employee(string n, int i, string d);
     /* A constructor that accepts the following values as arguments and assigns them to
      * the appropriate member variables: employee's name, employee's ID number, department
      * and position.
