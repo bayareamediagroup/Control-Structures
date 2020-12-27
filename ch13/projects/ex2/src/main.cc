@@ -6,7 +6,7 @@
 
 int main(void)
 {
-  Employee employee;
+  Employee employee("patrick", 3323, "engineering");
 
   cout << "Welcome to the employee portal" << endl;
 

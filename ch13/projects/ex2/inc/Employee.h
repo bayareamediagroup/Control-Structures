@@ -8,19 +8,28 @@ using namespace std;
 class Employee
 {
   private:
-    int idNumber;
+    int id;
     string department;
     string name;
     string position;
 
   public:
     /* constructor */
-    Employee();
+    Employee(string, int, string);
+    /* A constructor that accepts the following values as arguments and assigns them to
+     * the appropriate member variables: employee's name, employee's ID number, department
+     * and position.
+     * */
 
-    string getName() const
-    {
-      return name;
-    }
+    int setId(int id);
+    string setName(string n);
+    string setDepartment(string d);
+    string setPosition(string p);
+
+    int getId() const;
+    string getName() const;
+    string getDepartment() const;
+    string getPosition() const;
 };
 
 #endif
