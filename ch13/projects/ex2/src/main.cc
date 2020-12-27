@@ -13,12 +13,15 @@ void doubleId(int &id)
 int main(void)
 {
   Employee employee("", 0, "", "");
+  Employee emp1("Susan Meyers", 47899, "Accounting", "Vice President");
+  /*
+  Employee emp2("Mark Jones", 39119, "Accounting", "Programmer");
+  Employee emp3("Joy Rogers", 81774, "Manufacturing", "Engineer");
+  */
 
-  cout << "Welcome to the employee portal" << endl;
+  cout << emp1.getName() << "\t" <<  emp1.getId() << "\t" <<  emp1.getDepartment() << "\t" << emp1.getPosition() << endl;
 
-  cout << "Your Name: " << employee.getName() << endl;
-
-  /* what is going on here! */
+  /*
   employee.setId(2090);
 
   cout << employee.getId() << endl;
@@ -29,6 +32,7 @@ int main(void)
   doubleId(myVal);
 
   cout << "myVal: "  << " " << myVal << endl;
+  */
 
   return 0;
 }
