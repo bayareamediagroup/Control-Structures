@@ -4,11 +4,12 @@
 
 using namespace std;
 
-Employee::Employee(string n, int i, string d)
+Employee::Employee(string n, int i, string d, string p)
 {
   name = n;
   id = i;
   department = d;
+  position = p;
 }
 
 int Employee::setId(int id)

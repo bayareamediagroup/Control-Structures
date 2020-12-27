@@ -14,12 +14,7 @@ class Employee
     string position;
 
   public:
-    /* constructor */
-    Employee(string n, int i, string d);
-    /* A constructor that accepts the following values as arguments and assigns them to
-     * the appropriate member variables: employee's name, employee's ID number, department
-     * and position.
-     * */
+    Employee(string n, int i, string d, string p);
 
     int setId(int id);
     string setName(string n);
@@ -33,3 +28,6 @@ class Employee
 };
 
 #endif
+
+/* A default constructor that assigns empty strings ("") to the name, department, and position member variables,
+ * and 0 to the idNumber member variable. */
