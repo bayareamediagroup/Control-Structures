@@ -6,6 +6,11 @@
 
 using namespace std;
 
+void display(const CDate *d)
+{
+    cout << "Your Birthday is: " << d->getDay() << endl;
+}
+
 int main(void)
 {
   CDate cdate;
@@ -19,9 +24,23 @@ int main(void)
 
   cout << cdate.getDay() << "/"  << cdate.getMonth() << "/" << cdate.getYear() << endl;
 
-  dte->setDay(9);
+  display(dte);
 
-  cout << "Your Birthday is: " << dte->getDay() << endl;
+  int i = 0;
+  int bday = 0;
+
+  while(i < 3)
+  {
+    cout << "What day is your birthday? ";
+
+    cin >> bday;
+
+    dte->setDay(bday);
+
+    cout << "Your Birthday is: " << dte->getDay() << endl;
+
+    i += 1;
+  }
 
   return 0;
 }
