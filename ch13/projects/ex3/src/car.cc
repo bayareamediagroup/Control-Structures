@@ -5,19 +5,9 @@
 
 using namespace std;
 
-void Car::setSpeed(int s)
+Car::Car()
 {
-    speed = s;
-}
-
-void Car::setYear(int y)
-{
-    year = y;
-}
-
-void Car::setMake(string m)
-{
-    make = m;
+    speed = 0;
 }
 
 int Car::getSpeed() const

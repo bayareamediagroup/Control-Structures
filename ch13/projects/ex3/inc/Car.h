@@ -13,10 +13,6 @@ class Car
     public:
       Car();
 
-      void setSpeed(int);
-      void setYear(int);
-      void setMake(string);
-
       int getSpeed() const;
       int getYear() const;
       string getMake() const;
