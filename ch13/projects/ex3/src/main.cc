@@ -7,38 +7,36 @@ using namespace std;
 
 void control_speed(Car &c)
 {
-    cout << "car speed: " <<  c.getSpeed() << endl;
+  int i = 0;
+  while (i < 5)
+  {
+    c.accelerate();
+    cout << "Accelerating..." << c.getSpeed() << endl;
+    i += 1;
+  }
+  cout << "After accelerating, the Tesla is now crusing at " << c.getSpeed() << " mph." << endl;
 }
 
 int main(int argc, char **argv)
 {
-    Car car;
-    Car *c = nullptr;
-    c = &car;
+  Car car;
+  Car *c = nullptr;
+  c = &car;
 
-    int i = 0, j = 0;
+  int j = 0;
 
-    cout << "The Car is idle at: " << c->getSpeed() << endl;
+  cout << "The Tesla is sitting idle at " << c->getSpeed() << " mph." << endl;
 
-    while (i < 5)
-    {
-      c->accelerate();
-      cout << "Accelerating..." << c->getSpeed() << endl;
-      i += 1;
-    }
+  control_speed(car);
 
-    cout << "The Car is crusing at: " << c->getSpeed() << endl;
+  while(j < 5)
+  {
+    cout << "Braking..." << c->getSpeed() << endl;
+    c->brake();
+    j += 1;
+  }
 
-    while(j < 5)
-    {
-      cout << "Braking..." << c->getSpeed() << endl;
-      c->brake();
-      j += 1;
-    }
+  cout << "The Tesla is now sitting idle at " << c->getSpeed() << " mph." << endl;
 
-    cout << "The Car is now at: " << c->getSpeed() << endl;
-
-    control_speed(car);
-
-    return 0;
+  return 0;
 }
