@@ -11,6 +11,9 @@ int main(void)
     Personal *p = nullptr;
     p = &personal;
 
+    p->setName("Patrick");
+
+    cout << "Government Name: " << p->getName() << endl;
 
     return 0;
 }
