@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void control_speed(Car &c)
+static void control_speed(Car &c)
 {
   int i = 0;
   while (i < 5)
@@ -17,7 +17,7 @@ void control_speed(Car &c)
   cout << "After accelerating, the Tesla is now crusing at " << c.getSpeed() << " mph." << endl;
 }
 
-int main(int argc, char **argv)
+int main(void)
 {
   Car car;
   Car *c = nullptr;
