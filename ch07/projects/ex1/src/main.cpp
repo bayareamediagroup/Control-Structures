@@ -5,15 +5,15 @@ using namespace std;
 
 int main(void)
 {
-  int list[10] = {0};
-  int cnt = 0;
+  const short INDEX_SIZE = 10;
+  short list[INDEX_SIZE] = {0};
 
   cout << "Enter Ten Integers: " << endl;
 
-  for(int i = 0; i < 10; i++)
+  for(short i = 1; i <= INDEX_SIZE; i++)
   {
-    cout << (cnt += 1 ) << ". ";
-    cin >> list[i];
+    cout << i << ". ";
+    cin >> list[i - 1];
   }
 
   return 0;
