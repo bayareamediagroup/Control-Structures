@@ -10,6 +10,9 @@ void showAttendance(int &b)
 
 void checkAttendance(int l[], int s)
 {
+
+    int *listPtr = l;
+
     cout << "The 1st element of l is: " << *(l + 0) << endl;
     cout << "The 2nd element of l is: " << *(l + 1) << endl;
     cout << "The 3rd element of l is: " << *(l + 2) << endl;
@@ -19,6 +22,17 @@ void checkAttendance(int l[], int s)
     for(int i = 0; i < s; i++)
     {
         cout << "->" << l[i] << endl;
+    }
+
+    for(int j = 0; j < s; j++)
+    {
+        cout << "Pointer Arithmetic: " << *(l + j) << endl;
+    }
+
+    for(int k = 0; k < s; k++)
+    {
+      cout << "Backward: " << *listPtr << endl;
+      listPtr++;
     }
 }
 
