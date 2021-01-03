@@ -3,6 +3,35 @@
 
 using namespace std;
 
+/* Dynamic Memory Allocation */
+
+void step_time()
+{
+  int *iptr = nullptr;
+  int average = 0, elements = 0, total = 0;
+
+  cout << "How many elements would you like to create? ";
+  cin >> elements;
+  iptr = new int[elements];
+
+  for (int k = 0; k < elements; k++)
+  {
+    cout << "Day" << (k + 1) << endl;
+    cin >> iptr[k];
+  }
+
+  for (int k = 0; k < elements; k++)
+  {
+    total += iptr[k];
+  }
+
+  average = (total / elements);
+
+  cout << "Total: " << average << endl;
+  delete[] iptr;
+  iptr = nullptr;
+}
+
 void calculateNumber(const int *number, int *rank, int &sup)
 {
   *rank += 50;
@@ -114,6 +143,9 @@ int main(void)
   example();
   calculateNumber(&d, &r, s);
   getMoney(money, 4);
+
+  /* step_time is actually the assignment */
+  step_time();
 
   return 0;
 }
