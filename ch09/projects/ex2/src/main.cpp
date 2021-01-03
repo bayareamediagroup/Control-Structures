@@ -25,6 +25,12 @@ void test_scores(int &size)
     cout << "> " << ptrScores[j] << endl;;
   }
 
+  /* return memory to the heap store */
+
+  delete [] ptrScores;
+
+  /* assign the pointer to nullptr */
+  ptrScores = nullptr;
 }
 
 int main(void)
