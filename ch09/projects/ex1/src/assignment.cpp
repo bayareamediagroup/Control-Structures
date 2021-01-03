@@ -31,6 +31,9 @@ void createDynamicMemory(int &size)
     average = (total / size);
 
     cout << "The average size: " << average << endl;
+    /* free the array of memory & assign the pointer to nullptr */
+    delete[] ptr;
+    ptr = nullptr;
 }
 
 int main(void)
