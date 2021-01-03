@@ -6,6 +6,16 @@
 
 using namespace std;
 
+void sort_scores(const int *scores, int s)
+{
+    cout << "Sort Test Scores " << endl;
+
+    for(int i = 0; i < s; i++)
+    {
+        cout << "--->" << scores[i] << endl;
+    }
+}
+
 void test_scores(int &size)
 {
   int *ptrScores = nullptr;
@@ -15,6 +25,7 @@ void test_scores(int &size)
   for(int i = 0; i < size; i++)
   {
     cout << "Text Score " << i << " ";
+
     cin >> ptrScores[i];
   }
 
@@ -24,6 +35,8 @@ void test_scores(int &size)
   {
     cout << "> " << ptrScores[j] << endl;;
   }
+
+  sort_scores(ptrScores, size);
 
   /* return memory to the heap store */
 
@@ -42,5 +55,6 @@ int main(void)
   cin >> scores;
 
   test_scores(scores);
+
   return 0;
 }
