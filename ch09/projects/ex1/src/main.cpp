@@ -12,11 +12,13 @@ void step_time()
 
   cout << "How many elements would you like to create? ";
   cin >> elements;
+  // this dynamically creates an array
+
   iptr = new int[elements];
 
   for (int k = 0; k < elements; k++)
   {
-    cout << "Day" << (k + 1) << endl;
+    cout << "Day" << (k + 1) << " ";
     cin >> iptr[k];
   }
 
@@ -28,6 +30,7 @@ void step_time()
   average = (total / elements);
 
   cout << "Total: " << average << endl;
+  /* if an array was allocated, then the [] symbol must be placed between delete and iptr*/
   delete[] iptr;
   iptr = nullptr;
 }
