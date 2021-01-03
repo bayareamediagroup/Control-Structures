@@ -8,6 +8,7 @@ void createDynamicMemory(int &size)
 {
     int average = 0, *ptr = nullptr, total = 0;
 
+    /* create an array of dynamic arrays */
     ptr = new int[size];
 
     if (ptr == nullptr)
