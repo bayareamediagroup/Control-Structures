@@ -2,18 +2,19 @@
 #include <iostream>
 #include <string>
 
-#include "scores.h"
+#include "scores.hpp"
 
 using namespace std;
 
-void sort_scores(const int *scores, int s)
+void sort_scores(int *scores, int s)
 {
-    cout << "Sort Test Scores " << endl;
+  cout << "Sort Test Scores " << endl;
+  int *sc = scores;
 
-    for(int i = 0; i < s; i++)
-    {
-        cout << "--->" << scores[i] << endl;
-    }
+  for(int k = s; k >= 0; k--)
+  {
+    cout << "-> " << *(sc + k) << endl;
+  }
 }
 
 void test_scores(int &size)
