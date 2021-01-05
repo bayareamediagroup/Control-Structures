@@ -4,36 +4,52 @@
 
 #include "bureau.hpp"
 
+#define INDEX_SIZE 3
+
 using namespace std;
 
-int main(void)
+static void getData(search_t *l)
 {
-  int cnt = 1;
+  for(int j = 0; j < INDEX_SIZE; j++)
+  {
+    cout << l[j].name << endl;
+  }
+}
 
-  const int INDEX_SIZE = 3;
-
-  search_t s[INDEX_SIZE] = {0.0, 5096599, "Patrick", "Coding"};
+static void setData(search_t *s)
+{
+  int cnt = 0;
 
   cout << "Enter Name, Phone Number, Speaking Topic and Speaker Fee:" << endl;
 
-  while(cnt <= INDEX_SIZE)
+  while(cnt < INDEX_SIZE)
   {
     cout << cnt << ") ";
     cout << "\tName: " ;
     cin.ignore();
-    getline(cin, s->name);
+    getline(cin, s[cnt].name);
 
     cout << "\tPhone Number: ";
-    cin >> s->phone;
+    cin >> s[cnt].phone;
 
     cout << "\tSpeaking Topic: ";
     cin.ignore();
-    getline(cin, s->topic);
+    getline(cin, s[cnt].topic);
 
     cout << "\tSpeaker Fee: ";
-    cin >> s->fee;
+    cin >> s[cnt].fee;
+    cout << endl;
     cnt += 1;
   };
+
+  getData(s);
+}
+
+int main(void)
+{
+  search_t s[INDEX_SIZE] = {0.0, 5096599, "Patrick", "Coding"};
+
+  setData(s);
 
   return 0;
 }
