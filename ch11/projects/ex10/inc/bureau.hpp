@@ -11,4 +11,7 @@ typedef struct
   string topic;
 } search_t;
 
+static void getData(search_t *);
+static void setData(search_t *, const int &);
+
 #endif
