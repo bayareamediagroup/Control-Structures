@@ -12,6 +12,11 @@ RetailItem::RetailItem(string d, double p, int u)
   unitsOnHand = u;
 }
 
+RetailItem::~RetailItem()
+{
+  cout << "Destructor Called" << endl;
+}
+
 string RetailItem::setDescription(string d)
 {
   description = d;

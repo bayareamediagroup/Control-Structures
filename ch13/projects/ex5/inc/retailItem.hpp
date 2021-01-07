@@ -5,20 +5,21 @@ using namespace std;
 
 class RetailItem
 {
-  private:
-    double price;
-    int unitsOnHand;
-    string description;
+private:
+  double price;
+  int unitsOnHand;
+  string description;
 
-  public:
-    RetailItem(string, double, int);
-    string setDescription(string);
-    double setPrice(double);
-    int setUnitsOnHand(int);
+public:
+  RetailItem(string, double, int);
+  ~RetailItem();
+  string setDescription(string);
+  double setPrice(double);
+  int setUnitsOnHand(int);
 
-    string getDescription() const;
-    double getPrice() const;
-    int getUnitsOnHand() const;
+  string getDescription() const;
+  double getPrice() const;
+  int getUnitsOnHand() const;
 };
 
 #endif
