@@ -11,6 +11,7 @@ private:
   string description;
 
 public:
+  RetailItem();
   RetailItem(string, double, int);
   ~RetailItem();
   string setDescription(string);
