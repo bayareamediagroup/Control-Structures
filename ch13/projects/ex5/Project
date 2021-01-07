@@ -1,0 +1,21 @@
+5. RetailItem Class
+Write a class named RetailItem that holds data about an item in a retail store. The class
+should have the following member variables.
+
+description. A string that holds a brief description of the item.
+unitsOnHand. An int that holds the number of units currently in inventory.
+price. A double that holds the item's retail price.
+
+Write a constructor that accepts arguments for each member variable, appropriate
+mutator functions that store values in these member variables, and accessor functions
+that return the values in these member variables. Once you hav written the class, write
+a seperate program that creates three RetailItem objects and stores the following data
+in them.
+
+_________________________________________________
+
+            Description   Units on Hand   Price
+Item #1        Jacket           12          59.95
+Item #2        Designer         12          34.95
+Item #3        Shirt            12          24.95
+_________________________________________________
