@@ -5,16 +5,16 @@
 
 Inventory::Inventory()
 {
-  cost = 0.0;
-  totalCost = 0.0;
-  itemNumber = 0;
-  quantity = 0;
+  cost = 10;
+  totalCost = 20;
+  itemNumber = 30;
+  quantity = 40;
 }
 
 Inventory::Inventory(double cost, int item, int qty)
 {
-  itemNumber = item;
   cost = cost;
+  itemNumber = item;
   quantity = qty;
 }
 
@@ -35,25 +35,25 @@ void Inventory::setCost(double cost)
 
 void Inventory::setTotalCost(int quantity, int cost)
 {
-    totalCost = (quantity * cost);
+  totalCost = (quantity * cost);
 }
 
 int Inventory::getItemNumber() const
 {
-    return itemNumber;
+  return itemNumber;
 }
 
 int Inventory::getQuantity() const
 {
-    return quantity;
+  return quantity;
 }
 
 double Inventory::getCost() const
 {
-    return cost;
+  return cost;
 }
 
 double Inventory::getTotalCost() const
 {
-    return totalCost;
+  return totalCost;
 }
