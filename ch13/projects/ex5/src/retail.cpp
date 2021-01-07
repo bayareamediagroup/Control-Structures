@@ -5,6 +5,14 @@
 
 using namespace std;
 
+/* Default Constructor */
+RetailItem::RetailItem()
+{
+  description = "";
+  price = 0.0;
+  unitsOnHand = 0;
+}
+
 RetailItem::RetailItem(string d, double p, int u)
 {
   description = d;

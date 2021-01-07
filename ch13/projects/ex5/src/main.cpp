@@ -25,5 +25,7 @@ int main(void)
        << "Price"
        << "Units" << endl;
   cout << " " << retailItem1->getDescription() << " " << retailItem1->getPrice() << " " << retailItem1->getUnitsOnHand() << endl;
+
+  string str("hello");
   return 0;
 }
