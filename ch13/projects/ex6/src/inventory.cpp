@@ -11,11 +11,11 @@ Inventory::Inventory()
   quantity = 40;
 }
 
-Inventory::Inventory(double cost, int item, int qty)
+Inventory::Inventory(double c, int i, int q)
 {
-  cost = cost;
-  itemNumber = item;
-  quantity = qty;
+  cost = c;
+  itemNumber = i;
+  quantity = q;
 }
 
 void Inventory::setItemNumber(int itemNumber)

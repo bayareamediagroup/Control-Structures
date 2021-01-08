@@ -7,7 +7,9 @@ using namespace std;
 
 void getInventory(Inventory *in)
 {
-  cout << in->getCost() << endl;
+  cout << in[2].getItemNumber() << endl;
+  cout << in[1].getItemNumber() << endl;
+  cout << in[0].getItemNumber() << endl;
 }
 
 int main(void)
@@ -19,24 +21,16 @@ int main(void)
       Inventory(58.13, 83, 69),
       Inventory(32.54, 43, 85)};
 
-  cout << inventory[0].getItemNumber() << endl;
-  cout << inventory[1].getItemNumber() << endl;
-  cout << inventory[2].getItemNumber() << endl;
+  Inventory *inv = nullptr;
 
-  Inventory *inv = inventory;
-  cout << "inv->getItemNumber(): " << inv->getItemNumber() << endl;
+  inv = inventory;
 
-  /*
-  inv->getCost();
+  for (int i = 0; i <= 2; i++)
+  {
+    cout << "inv[i].getItemNumber(): " << inv[i].getItemNumber() << " - " << inv[i].getCost() << " - " << inv[i].getQuantity() << endl;
+  }
 
   getInventory(inv);
-  */
-
-  /*
-  cout << inv->getCost() << endl;
-  cout << inv->getItemNumber() << endl;
-  cout << inv->getQuantity() << endl;
-  */
 
   return 0;
 }
