@@ -18,24 +18,24 @@ Inventory::Inventory(double c, int i, int q)
   quantity = q;
 }
 
-void Inventory::setItemNumber(int itemNumber)
+void Inventory::setItemNumber(int i)
 {
-  itemNumber = itemNumber;
+  itemNumber = i;
 }
 
-void Inventory::setQuantity(int quantity)
+void Inventory::setQuantity(int q)
 {
-  quantity = quantity;
+  quantity = q;
 }
 
-void Inventory::setCost(double cost)
+void Inventory::setCost(double c)
 {
-  cost = cost;
+  cost = c;
 }
 
-void Inventory::setTotalCost(int quantity, int cost)
+void Inventory::setTotalCost(int q, int c)
 {
-  totalCost = (quantity * cost);
+  totalCost = (q * c);
 }
 
 int Inventory::getItemNumber() const

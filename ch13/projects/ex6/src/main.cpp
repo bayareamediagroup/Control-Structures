@@ -7,6 +7,7 @@ using namespace std;
 
 void getInventory(Inventory *in)
 {
+  in[0].setItemNumber(12354);
   cout << in[2].getItemNumber() << endl;
   cout << in[1].getItemNumber() << endl;
   cout << in[0].getItemNumber() << endl;
