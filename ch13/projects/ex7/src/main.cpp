@@ -9,7 +9,7 @@ using namespace std;
 int main(int argc, char **argv)
 {
   Scores scores;
-  Scores *sc;
+  Scores *sc = nullptr;
 
   sc = &scores;
 
