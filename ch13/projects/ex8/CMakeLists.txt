@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.19.20)
 
-project(scores VERSION 1.0)
+project(circle VERSION 1.0)
 
 set(CMAKE_BUILD_TYPE Release)
 
